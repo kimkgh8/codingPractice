@@ -15,32 +15,40 @@ public class practice_Implementation_MyWay {
 		int y = 1;
 		
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		for (int i=0;i<st.countTokens();i++) {
+		int excuteCnt = st.countTokens();
+		for (int i=0;i<excuteCnt;i++) {
 			String moveLocation = st.nextToken();
-			System.out.println("moveLocation:"+moveLocation);
-			if (moveLocation != null && !moveLocation.isEmpty()) {
-				String val = move(moveLocation,x,y);
-				x = Integer.parseInt(val.substring(0,val.indexOf(",")));
-				y = Integer.parseInt(val.substring(val.indexOf(",")+1,val.length()));
-			} else {
-				break;
-			}
+			String val = move(moveLocation,N,x,y);
+			x = Integer.parseInt(val.substring(0,val.indexOf(",")));
+			y = Integer.parseInt(val.substring(val.indexOf(",")+1,val.length()));
 		}
 		
 		System.out.println(x+" "+y);
 		
 	}
 	
-	public static String move (String moveLocation, int x, int y ) {
+	public static String move (String moveLocation, int range, int x, int y ) {
 		switch (moveLocation) {
 			case "L":
-				y -= 1;
+				if (y-1 > 0) {
+					y -= 1;
+				}
+				break;
 			case "R":
-				y += 1;
+				if (y+1 <= range) {
+					y += 1;
+				}
+				break;
 			case "U":
-				x -= 1;
+				if (x-1 > 0) {
+					x -= 1;
+				}
+				break;
 			case "D":
-				x += 1;
+				if (x+1 <= range) {
+					x += 1;
+				}
+				break;
 		}
 		String movement = String.valueOf(x)+","+String.valueOf(y);
 		return movement;
