@@ -2,7 +2,7 @@ package personal;
 
 import java.util.Scanner;
 
-//1이 될 때까지
+//상하좌우
 public class practice_Implementation {
 	public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
