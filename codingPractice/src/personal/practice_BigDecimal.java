@@ -36,6 +36,11 @@ public class practice_BigDecimal {
 		BigDecimal b_divide3 = b_divide1.divide(b_divide2, RoundingMode.HALF_UP);
 
 		System.out.println("나눗셈결과 : " + b_divide3);
+		
+		// 지수표현
+		BigDecimal b_divide4 = new BigDecimal("2.564E6");
+		System.out.println("지수표현:" + b_divide4.toString());
+		System.out.println("지수표현제거:" + b_divide4.toPlainString());
 
 	}
 }
